@@ -1,0 +1,249 @@
+
+
+.main-container {
+    display: flex; /*to use align the hero and form sections kol wa7da fe 7eta  */
+    max-width: 1300px; /* a2sa 3ard ll shash bta3tna */
+    margin: 80px auto 0; /* important! // top margin => 80px, auto  => left and right, 0 => bottom */
+    padding: 0 8% ; /* 8% padding on left and right for some breathing space */
+    align-items: center; /* hnwasten el content fe nos el container */
+    gap: 60px; /* 60px =>  gap between the hero and form sections */
+}
+
+/* left side ==> Hero  */
+.hero-section { flex: 1.2;}  /*. hero-section => 1.2 times the width to create a balanced layout */
+
+.status-badge {
+    background: rgba(0, 255, 157, 0.1);
+    color: var(--primary-color);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 25px;
+    border: 1px solid rgba(0, 255, 157, 0.2);
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    box-shadow: 0 0 12px var(--primary-color);
+}
+
+h1 { 
+    font-size: clamp(40px, 6vw, 80px); /* حجم خط متجاوب */
+    line-height: 1.1; 
+    margin-bottom: 20px; 
+}
+
+h1 span { color: var(--primary-color); }
+
+.description {
+    font-size: 18px;
+    color: var(--text-muted);
+    max-width: 520px;
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+.social-links { display: flex; align-items: center; gap: 25px; }
+
+#ChangeTheme {
+    background: var(--primary-color);
+    color: #000;
+    padding: 14px 32px;
+    border-radius: 30px;
+    font-weight: 700;
+    cursor: pointer;
+    border: none;
+    transition: var(--transition);
+}
+
+#ChangeTheme:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 255, 157, 0.2);
+}
+
+.icons i {
+    font-size: 24px;
+    color: #444;
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.icons i:hover { 
+    color: var(--primary-color); 
+    transform: scale(1.1);
+}
+
+/* 5. الجزء الأيمن (Form) */
+.form-section { 
+    flex: 0.8; 
+    display: flex;
+    justify-content: flex-end;
+}
+
+.content {
+    background: var(--glass-bg);
+    padding: 45px;
+    border-radius: 28px;
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(25px);
+    width: 100%;
+    max-width: 460px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+.content h2 {
+    margin-bottom: 30px;
+    font-size: 28px;
+    text-align: left;
+}
+
+/* 6. المدخلات (Inputs) */
+.input-box {
+    position: relative;
+    margin-bottom: 22px;
+}
+
+.row { 
+    display: flex; 
+    gap: 15px; 
+}
+
+.input-box input, 
+.input-box select {
+    width: 100%;
+    padding: 16px 45px 16px 18px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border);
+    border-radius: 14px;
+    color: white;
+    font-size: 15px;
+    outline: none;
+    transition: var(--transition);
+}
+
+/* ── focus effect 3shan el inputs t-kon shaklaha pro f el 2 themes ── */
+.input-box input:focus {
+    outline: none; /* n-shil el default outline bta3 el browser */
+    border-color: var(--primary-color); /* y-shghal el green border elly f el root */
+    background: var(--glass-bg); /* y-保持 el glass effect */
+    
+    /* hna el sa7er: bn-esta5dem el variable bta3 el glow elly f el global */
+    box-shadow: 0 0 15px var(--primary-glow); 
+    
+    /* transition 3shan el dakhla tkon na3ma mesh 5abt laz2 */
+    transition: var(--transition);
+}
+
+/* lw 3aoz el icons kman t-nawar lma el user y-focus 3al input */
+.input-box:focus-within i {
+    color: var(--primary-color);
+    text-shadow: 0 0 10px var(--primary-glow);
+    transition: var(--transition);
+}
+
+
+.input-box i {
+    position: absolute;
+    right: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--primary-color);
+    font-size: 20px;
+    opacity: 0.8;
+}
+
+/* ── Fix el Input f el Light Mode (3shan el klam yban) ── */
+[data-theme="light"] .input-box input {
+    background: rgba(0, 0, 0, 0.03); /* background rmady 5afif awy */
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    color: #0f172a; /* el klam ykon eswed f5m */
+}
+
+/* n-zbt lon el placeholder l2no f el dark mode abyad */
+[data-theme="light"] .input-box input::placeholder {
+    color: #64748b; /* gray ghame2 shwaya 3shan yt-2ry */
+}
+
+/* el icon elly gowa el input box */
+[data-theme="light"] .input-box i {
+    color: #475569;
+}
+
+/* el focus f el light mode ykon clear */
+[data-theme="light"] .input-box input:focus {
+    background: #ffffff;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 10px rgba(5, 150, 105, 0.1);
+}
+
+/* 7. الأزرار والنصوص الإضافية */
+.btnn {
+    width: 100%;
+    padding: 16px;
+    background: var(--primary-color);
+    color: #000;
+    border: none;
+    border-radius: 14px;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: var(--transition);
+}
+
+.btnn:hover {
+    box-shadow: 0 10px 20px rgba(5, 150, 105, 0.2);
+}
+
+.btnn:active { transform: scale(0.97); }
+
+.footer-text { 
+    text-align: center; 
+    margin-top: 25px; 
+    font-size: 14px; 
+    color: var(--text-muted); 
+}
+
+.footer-text a { 
+    color: var(--primary-color); 
+    font-weight: 600;
+    margin-left: 5px;
+}
+
+/* 8. الأنيميشن والتجاوب */
+@keyframes transitionIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 1024px) {
+    .main-container { 
+        flex-direction: column; 
+        text-align: center; 
+        margin-top: 40px;
+        gap: 50px;
+    }
+    .hero-section { display: flex; flex-direction: column; align-items: center; }
+    .description { margin-left: auto; margin-right: auto; }
+    .social-links { justify-content: center; }
+    .form-section { justify-content: center; width: 100%; }
+}
+    /* Subtle grid background pattern */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      background-image:
+        linear-gradient(rgba(0, 255, 157, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 255, 157, 0.03) 1px, transparent 1px);
+      background-size: 50px 50px;
+      pointer-events: none;
+    }

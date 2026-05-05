@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduVerse</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/fonts.css">
+    <link rel="stylesheet" href="../css/martin.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <!-- remix icon aw3aaaa 7d wyms7 deeee -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet" />
+</head>
+
+
+<body>
+    <nav>
+        <a class="logo" href="../Pages/home.html">EduVerse</a>
+
+        <div class="nav-links">
+            <a href="../Pages/home.html" class="active">Home</a>
+            <a href="../Course Page/courses.html">Courses</a>
+            <a href="../Pages/martin.html">Files</a>
+            <a href="../Pages/contactUs.html">Contact US</a>
+
+        </div>
+        <div class="nav-actions" style="display: flex; align-items: center; gap: 15px;">
+            <a href="../project/profile.html" class="user-profile-link">
+                <i class="ri-user-3-line"></i>
+            </a>
+
+            <button id="ChangeTheme" class="theme-btn">
+                <i class="ri-moon-line"></i>
+            </button>
+        </div>
+
+    </nav>
+
+    <header class="header">
+        <h1>Courses Overview</h1>
+        <p>Track your progress across different learning paths and subjects</p>
+    </header>
+
+    <main class="container">
+        <div class="stats">
+            <div class="stat-item">
+                <span class="stat-number">4</span>
+                <span class="stat-label">Active Courses</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">0%</span>
+                <span class="stat-label">Average Progress</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">12</span>
+                <span class="stat-label">Completed Projects</span>
+            </div>
+        </div>
+
+        <h2 class="section-title">Course Progress</h2>
+
+        <div class="files-grid">
+            <div class="file-card">
+                <span class="file-icon">EE</span>
+                <span class="category-badge badge-html">Engineering</span>
+                <h3>Electronics 1 (IT111)</h3>
+                <p>Review fundamental concepts and electronic circuits</p>
+                <div style="margin: 15px 0;">
+                    <div
+                        style="display: flex; justify-content: space-between; margin-bottom: 5px; font-size: 0.85rem; color: var(--text-secondary);">
+                        <span>Progress</span>
+                        <span style="color: var(--accent-green);">0%</span>
+                    </div>
+                    <div
+                        style="background-color: var(--border-color); border-radius: 10px; height: 8px; width: 1%; overflow: hidden;">
+                        <div style="background-color: var(--accent-green); height:75% ; width: 75%;"></div>
+                    </div>
+                </div>
+                <a href="#" class="download-btn" style="margin-top: 10px;">Continue Study</a>
+            </div>
+
+            <div class="file-card">
+                <span class="file-icon">LC</span>
+                <span class="category-badge badge-javascript">Engineering</span>
+                <h3>Logic Circuits (ECE1305)</h3>
+                <p>Study and analyze logic circuits</p>
+                <div style="margin: 15px 0;">
+                    <div
+                        style="display: flex; justify-content: space-between; margin-bottom: 5px; font-size: 0.85rem; color: var(--text-secondary);">
+                        <span>Progress</span>
+                        <span style="color: var(--accent-green);">0%</span>
+                    </div>
+                    <div
+                        style="background-color: var(--border-color); border-radius: 10px; height: 8px; width: 1%; overflow: hidden;">
+                        <div style="background-color: var(--accent-green); height:75% ; width: 75%;"></div>
+                    </div>
+                </div>
+                <a href="#" class="download-btn" style="margin-top: 10px;">Continue Study</a>
+            </div>
+
+            <div class="file-card">
+                <span class="file-icon">C</span>
+                <span class="category-badge badge-nodejs">Programming</span>
+                <h3>C Programming & Data Structures</h3>
+                <p>Understand data structures and memory management</p>
+                <div style="margin: 15px 0;">
+                    <div
+                        style="display: flex; justify-content: space-between; margin-bottom: 5px; font-size: 0.85rem; color: var(--text-secondary);">
+                        <span>Progress</span>
+                        <span style="color: var(--accent-green);">0%</span>
+                    </div>
+                    <div
+                        style="background-color: var(--border-color); border-radius: 10px; height: 8px; width: 1%; overflow: hidden;">
+                        <div style="background-color: var(--accent-green); height:75% ; width: 75%;"></div>
+                    </div>
+                </div>
+                <a href="#" class="download-btn" style="margin-top: 10px;">Continue Study</a>
+            </div>
+
+            <div class="file-card">
+                <span class="file-icon">Web</span>
+                <span class="category-badge badge-react">Development</span>
+                <h3>Web Development</h3>
+                <p>Build and develop interactive user interfaces</p>
+                <div style="margin: 15px 0;">
+                    <div
+                        style="display: flex; justify-content: space-between; margin-bottom: 5px; font-size: 0.85rem; color: var(--text-secondary);">
+                        <span>Progress</span>
+                        <span style="color: var(--accent-green);">0%</span>
+                    </div>
+                    <div
+                        style="background-color: var(--border-color); border-radius: 10px; height: 8px; width: 1%; overflow: hidden;">
+                        <div style="background-color: var(--accent-green); height:75% ; width: 75%;"></div>
+                    </div>
+                </div>
+                <a href="#" class="download-btn" style="margin-top: 10px;">Continue Study</a>
+            </div>
+        </div>
+    </main>
+    <script src="../js/theme.js"></script>
+    <script src="../js/script.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/marly.js"></script>
+
+
+</body>
+<footer class="mainFooter">
+    <div class="container">
+        <div class="design">
+            <p> Designed by <span>KM</span> © 2026 EduVerse.</p>
+        </div>
+
+        <div class="footerLinks">
+            <a href="../Pages/home.html">Home</a>
+            <a href="../Course Page/courses.html">Courses</a>
+            <a href="../Pages/martin.html">Files</a>
+            <a href="../Pages/contactUs.html">Contact US</a>
+        </div>
+    </div>
+</footer>
+
+
+
+
+</html>

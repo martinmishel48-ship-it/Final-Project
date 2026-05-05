@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduVerse</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/fonts.css">
+    <link rel="stylesheet" href="../css/marly.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <!-- remix icon aw3aaaa 7d wyms7 deeee -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet" />
+</head>
+
+<body>
+
+    <nav>
+        <a class="logo" href="../Pages/home.html">EduVerse</a>
+
+        <div class="nav-links">
+            <a href="../Pages/home.html" class="active">Home</a>
+            <a href="../Pages/CoursesKArim.html">Courses</a>
+            <a href="../Pages/martin.html">Files</a>
+            <a href="../Pages/contactUs.html">Contact US</a>
+
+
+
+
+        </div>
+        <div class="nav-actions" style="display: flex; align-items: center; gap: 15px;">
+            <a href="../project/profile.html" class="user-profile-link">
+                <i class="ri-user-3-line"></i>
+            </a>
+
+            <button id="ChangeTheme" class="theme-btn">
+                <i class="ri-moon-line"></i>
+            </button>
+        </div>
+
+    </nav>
+
+    <main>
+
+        <div class="page-header">
+            <h1>Get in <span class="neon">touch</span></h1>
+            <p>Have a question about a course, your account, or partnerships? We'd love to hear from you.</p>
+        </div>
+
+        <div class="contact-layout">
+
+            <div class="info-panel">
+
+                <div class="info-card glass">
+                    <div class="info-card-icon"><i class="ri-mail-line"></i></div>
+                    <h3>Email us</h3>
+                    <p>For general questions and course support.</p>
+                    <a href="mailto:support@eduverse.com">support@eduverse.com</a>
+                </div>
+
+                <div class="info-card glass">
+                    <div class="info-card-icon"><i class="ri-phone-line"></i></div>
+                    <h3>Call us</h3>
+                    <p>Speak directly with our support team.</p>
+                    <a href="tel:+15550123456">01202745350</a>
+                </div>
+
+                <div class="info-card glass">
+                    <div class="info-card-icon"><i class="ri-map-pin-line"></i></div>
+                    <h3>Our office</h3>
+                    <p>123 Learning Lane, Suite 4B<br>San Francisco, CA 94103<br>United States</p>
+                </div>
+
+                <div class="info-card glass">
+                    <div class="info-card-icon"><i class="ri-time-line"></i></div>
+                    <h3>Support hours</h3>
+                    <div style="margin-top:10px">
+                        <div class="hours-row"><span>Mon – Fri</span><span class="open">9 AM – 6 PM</span></div>
+                        <div class="hours-row"><span>Saturday</span><span class="open">10 AM – 3 PM</span></div>
+                        <div class="hours-row"><span>Sunday</span><span class="closed">Closed</span></div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="form-card glass">
+                <h2>Send us a message</h2>
+
+                <div class="form-row">
+                    <div class="field" id="field-fname">
+                        <label>First name</label>
+                        <input type="text" id="fname" placeholder="Your name">
+                        <span class="error-msg">Please enter your first name.</span>
+                    </div>
+                    <div class="field" id="field-lname">
+                        <label>Last name</label>
+                        <input type="text" id="lname" placeholder="Your last name">
+                        <span class="error-msg">Please enter your last name.</span>
+                    </div>
+                </div>
+
+                <div class="field" id="field-email">
+                    <label>Email address</label>
+                    <input type="email" id="email" placeholder="karim@edu.gov">
+                    <span class="error-msg">Please enter a valid email address.</span>
+                </div>
+
+                <div class="field">
+                    <label>Topic</label>
+                    <select id="topic">
+                        <option value="">Select a topic...</option>
+                        <option>Course question</option>
+                        <option>Account &amp; billing</option>
+                        <option>Technical issue</option>
+                        <option>Partnership inquiry</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+
+                <div class="field" id="field-message">
+                    <label>Message</label>
+                    <textarea id="message" placeholder="Tell us how we can help..."></textarea>
+                    <span class="error-msg">Please write a message before sending.</span>
+                </div>
+
+                <div class="submit-row">
+                    <p>We usually reply within 24 hours.</p>
+                    <button class="btn-submit" id="submitBtn" onclick="handleSubmit()">Send message</button>
+                </div>
+
+                <div class="success-banner" id="successBanner">
+                    Message sent! We'll get back to you within 24 hours.
+                </div>
+            </div>
+
+        </div>
+    </main>
+    <script src="../js/main.js"></script>
+    <script src="../js/theme.js"></script>
+    <script src="../js/auth.js"></script>
+</body>
+
+<footer class="mainFooter">
+    <div class="container">
+        <div class="design">
+            <p> Designed by <span>KM</span> © 2026 EduVerse.</p>
+        </div>
+
+        <div class="footerLinks">
+            <a href="../Pages/home.html">Home</a>
+            <a href="../Pages/CoursesKArim.html">Courses</a>
+            <a href="../Pages/martin.html">Files</a>
+            <a href="../Pages/contactUs.html">Contact US</a>
+        </div>
+    </div>
+</footer>
+
+
+
+</html>

@@ -1,0 +1,210 @@
+ /* ================= NAVBAR ================= */
+header.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+}
+
+.logo {
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 20px;
+}
+
+/* Nav */
+nav ul {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--text-muted);
+    transition: var(--transition);
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    color: var(--primary-color);
+}
+
+/* User Profile */
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    padding: 6px 14px 6px 6px;
+    border-radius: 50px;
+    border: 1px solid var(--glass-border);
+    background: var(--glass-bg);
+    transition: var(--transition);
+}
+
+.user-profile:hover {
+    border-color: var(--primary-color);
+    background: rgba(0, 255, 157, 0.05);
+    box-shadow: 0 0 12px rgba(0, 255, 157, 0.15);
+}
+
+.user-avatar {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--primary-color);
+    /* Fallback gradient when image is missing */
+    background: linear-gradient(135deg, #00ff9d, #00b8ff);
+}
+
+.user-name {
+    color: var(--text-main);
+    font-size: 14px;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+/* ================= HERO ================= */
+main > section.hero {
+    padding: 60px;
+}
+
+.hero header h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.hero header p {
+    color: var(--text-muted);
+    max-width: 600px;
+}
+
+/* ================= COURSES ================= */
+.courses-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    padding: 40px 60px;
+}
+
+/* Card */
+article.course-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    padding: 15px;
+    transition: var(--transition);
+    overflow: hidden;
+    will-change: transform;
+}
+
+article.course-card:hover {
+    transform: translateY(-6px) scale(1.01);
+}
+
+/* Image */
+article.course-card figure {
+    margin: 0;
+}
+
+article.course-card img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Card Content */
+article.course-card > div {
+    margin-top: 10px;
+}
+
+article.course-card h2 {
+    font-size: 18px;
+    margin-top: 6px;
+}
+
+/* Level Badge */
+.level {
+    display: inline-block;
+    padding: 4px 10px;
+    font-size: 12px;
+    border-radius: 6px;
+    font-weight: 500;
+}
+
+/* Levels Colors */
+.beginner { background: #00c853; }
+.intermediate { background: #ffab00; }
+.advanced { background: #ff3d00; }
+
+/* Meta */
+.meta {
+    margin: 10px 0;
+    color: var(--text-muted);
+    font-size: 14px;
+}
+
+/* Footer */
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-footer span {
+    font-size: 13px;
+    color: var(--text-muted);
+}
+
+/* Arrow */
+.arrow {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--primary-color);
+    font-size: 20px;
+    transition: var(--transition);
+}
+
+.arrow:hover {
+    transform: translateX(5px);
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 992px) {
+    .courses-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    header.navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .user-name {
+        display: none;
+    }
+
+    .user-profile {
+        padding: 4px;
+        border-radius: 50%;
+    }
+
+    .courses-container {
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+
+    main > section.hero {
+        padding: 30px;
+    }
+}

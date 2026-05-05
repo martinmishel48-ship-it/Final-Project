@@ -1,0 +1,184 @@
+:root {
+    --primary-color: #00ff9d;
+    --bg-color: #0a0a0a;
+    --surface-color: rgba(255,255,255,0.03);
+    --border-color: rgba(255,255,255,0.1);
+    --text-main: #fff;
+    --text-muted: #999;
+    --font: "Poppins", sans-serif;
+}
+
+/* LIGHT THEME */
+[data-theme="light"] {
+    --bg-color: #f5f5f5;
+    --surface-color: rgba(0,0,0,0.05);
+    --border-color: rgba(0,0,0,0.1);
+    --text-main: #111;
+    --text-muted: #555;
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--text-main);
+    font-family: var(--font);
+    padding: 30px;
+    transition: 0.3s;
+}
+
+/* HEADER */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.logo {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.nav-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-menu a {
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+    color: var(--primary-color);
+}
+
+/* RIGHT BUTTONS */
+.right-icons {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.login-btn,
+.theme-btn {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    cursor: pointer;
+    font-size: 14px;
+    color: var(--text-muted);
+    transition: 0.3s;
+}
+
+.login-btn:hover,
+.theme-btn:hover {
+    color: var(--primary-color);
+    transform: scale(1.05);
+}
+
+/* CARD */
+.glass-card {
+    background: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 25px;
+}
+
+/* PROFILE HEADER */
+.profile-hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.user-meta {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.profile-icon {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid var(--border-color);
+    color: var(--primary-color);
+}
+
+/* FORM */
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    background: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+    border-radius: 8px;
+    outline: none;
+}
+
+.btn {
+    background: var(--primary-color);
+    color: black;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+/* GRID */
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+/* LIST */
+.list-card {
+    background: rgba(255,255,255,0.02);
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+}
+
+.tag {
+    display: inline-block;
+    padding: 5px 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    font-size: 12px;
+    margin: 5px 5px 0 0;
+    color: var(--text-muted);
+}
+
+.section-title {
+    margin-top: 20px;
+    color: var(--primary-color);
+}
+
+.small {
+    font-size: 13px;
+    color: var(--text-muted);
+}

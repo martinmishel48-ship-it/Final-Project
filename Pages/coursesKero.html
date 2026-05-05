@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduVerse - HTML Mastery</title>
+
+    <!-- ربط ملف CSS -->
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/fonts.css">
+    <!-- <link rel="stylesheet" href="../css/style.css"> -->
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/kero.css">
+    <!-- remix icon aw3aaaa 7d wyms7 deeee -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet" />
+</head>
+</head>
+
+<body>
+
+    <nav>
+        <a class="logo" href="../Pages/home.html">EduVerse</a>
+
+        <div class="nav-links">
+            <a href="../Pages/home.html" class="active">Home</a>
+            <a href="../Pages/CoursesKArim.html">Courses</a>
+            <a href="../Pages/martin.html">Files</a>
+            <a href="../Pages/contactUs.html">Contact US</a>
+
+        </div>
+        <div class="nav-actions" style="display: flex; align-items: center; gap: 15px;">
+            <a href="../project/profile.html" class="user-profile-link">
+                <i class="ri-user-3-line"></i>
+            </a>
+
+            <button id="ChangeTheme" class="theme-btn">
+                <i class="ri-moon-line"></i>
+            </button>
+        </div>
+
+    </nav>
+
+    <div class="container">
+        <div class="main-content">
+            <!-- Player -->
+            <div class="video-box">
+                <div id="videoCover" class="video-overlay"
+                    style="background-image: url('https://img.youtube.com/vi/qz0aGYrrlhU/maxresdefault.jpg');">
+                    <div class="play-btn" onclick="startVideo()">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="black">
+                            <path d="M8 5v14l11-7z" />
+                        </svg>
+                    </div>
+                </div>
+                <iframe id="videoIframe" src="" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+
+            <!-- Header -->
+            <div class="lesson-header">
+                <div>
+                    <h1 id="mainTitle">Introduction to HTML5 Mastery</h1>
+                    <p id="lessonMeta">🕒 Module 1 • Lesson 1 • 15 mins total</p>
+                </div>
+                <a href="https://www.w3schools.com/html/tryit.asp?filename=tryhtml_default" target="_blank"
+                    class="btn-practice">
+                    Practice Session
+                </a>
+            </div>
+
+            <!-- Tabs -->
+            <div class="tabs-card">
+                <div class="tabs-nav">
+                    <div class="tab-item active" onclick="switchTab('overview', event)">Overview</div>
+                    <div class="tab-item" onclick="switchTab('res', event)">Resources</div>
+                </div>
+                <div id="tabContent">
+                    <p style="color: var(--text-dim); line-height: 1.6; margin-bottom: 20px;">
+                        In this lesson, you will learn the core foundations of Web Development. We'll start by
+                        understanding how HTML structures the web and how to write your first "Hello World" document
+                        using semantic tags.
+                    </p>
+                    <div class="tags">
+                        <span class="tag">Web Development</span>
+                        <span class="tag">HTML5</span>
+                        <span class="tag">Frontend</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="syllabus-body">
+                <div class="progress-container">
+                    <div style="display: flex; justify-content: space-between; font-size: 13px;">
+                        <span>Course Syllabus</span>
+                        <span style="color: var(--accent-green);">1/2 Lessons</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 50%;"></div>
+                    </div>
+                </div>
+
+                <span class="module-label">Module 1: The Basics</span>
+
+                <div class="lesson-row active"
+                    onclick="changeLesson('kUMe1FH4CHE', 'Introduction to HTML5 Mastery', 'Module 1 • Lesson 1', this)">
+                    <div class="status-icon">▶</div>
+                    <div class="lesson-txt">
+                        <h4>HTML Crash Course</h4>
+                        <p style="color: var(--accent-green);">ACTIVE LESSON</p>
+                    </div>
+                </div>
+
+                <div class="lesson-row"
+                    onclick="changeLesson('qz0aGYrrlhU', 'Ultimate HTML & CSS Full Course', 'Module 1 • Lesson 2', this)">
+                    <div class="status-icon">2</div>
+                    <div class="lesson-txt">
+                        <h4>Full Structure Guide</h4>
+                        <p>02:02:00 • VIDEO</p>
+                    </div>
+                </div>
+
+                <span class="module-label">Module 2: Advanced</span>
+                <div class="lesson-row" style="opacity: 0.5; cursor: not-allowed;">
+                    <div class="status-icon">🔒</div>
+                    <div class="lesson-txt">
+                        <h4>Semantic HTML Master</h4>
+                        <p>LOCKED</p>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="download-link">Download Curriculum PDF</a>
+        </aside>
+    </div>
+
+    <!-- ربط ملف JavaScript -->
+    <script src="../js/script.js"></script>
+    <script src="../js/theme.js"></script>
+    <script src="../js/course.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/kero.js"></script>
+
+</body>
+<footer class="mainFooter">
+    <div class="container">
+        <div class="design">
+            <p> Designed by <span>KM</span> © 2026 EduVerse.</p>
+        </div>
+
+        <div class="footerLinks">
+            <a href="../Pages/home.html">Home</a>
+            <a href="../Pages/CoursesKArim.html">Courses</a>
+            <a href="../Pages/martin.html">Files</a>
+            <a href="../Pages/contactUs.html">Contact US</a>
+        </div>
+    </div>
+</footer>
+
+</html>

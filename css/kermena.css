@@ -1,0 +1,199 @@
+:root {
+  --bg: #0b0f0e;
+  --bg2: #001a14;
+  --card: #141414;
+  --border: #2a2a2a;
+  --text: #ffffff;
+  --sub: #888;
+  --accent: #00ffae;
+  --accent-dark: #00cc8a;
+  --nav-bg: #111;
+}
+
+[data-theme="light"] {
+  --bg: #f4f7f6;
+  --bg2: #e6f5f0;
+  --card: #ffffff;
+  --border: #d4d4d4;
+  --text: #0b0f0e;
+  --sub: #555;
+  --accent: #00a870;
+  --accent-dark: #008a5c;
+  --nav-bg: #ffffff;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  transition: background 0.3s, color 0.3s;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.intro {
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 28px;
+  background: linear-gradient(120deg, var(--bg), var(--bg2));
+  text-align: center;
+  transition: background 0.3s;
+}
+
+.intro-text h1 { font-size: 50px; line-height: 1.3; }
+.intro-text span { color: var(--accent); }
+.intro-text p { margin-top: 20px; color: var(--sub); }
+
+nav1 {
+  background: var(--nav-bg);
+  border-bottom: 1px solid var(--border);
+  padding: 0 24px;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+  transition: background 0.3s, border-color 0.3s;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--accent);
+  letter-spacing: -0.5px;
+}
+
+.nav1-links { display: flex; gap: 6px; align-items: center; }
+
+.nav1-links a {
+  text-decoration: none;
+  color: var(--sub);
+  font-size: 13px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: all 0.2s;
+}
+
+.nav1-links a:hover, .nav1-links a.active {
+  color: var(--accent);
+  background: rgba(0, 255, 174, 0.08);
+}
+
+[data-theme="light"] .nav1-links a:hover,
+[data-theme="light"] .nav1-links a.active {
+  background: rgba(0, 168, 112, 0.1);
+}
+
+.nav1-right { display: flex; align-items: center; gap: 10px; }
+
+.btn-start {
+  background: var(--accent);
+  color: #000;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-start:hover { background: var(--accent-dark); }
+
+.theme-toggle {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 7px 10px;
+  cursor: pointer;
+  color: var(--sub);
+  font-size: 16px;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.theme-toggle:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.content-area { flex: 1; display: flex; flex-direction: column; }
+
+.main {
+  padding: 60px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.form-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 40px;
+  width: 100%;
+  max-width: 560px;
+  transition: background 0.3s, border-color 0.3s;
+}
+
+.form-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: var(--accent);
+}
+
+.form-sub { font-size: 13px; color: var(--sub); margin-bottom: 28px; }
+
+.form-group { margin-bottom: 18px; }
+
+.form-group label {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--sub);
+  margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px 14px;
+  color: var(--text);
+  font-size: 14px;
+  outline: none;
+  transition: background 0.3s, border-color 0.2s, color 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus { border-color: var(--accent); }
+
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+
+button[type="get started"] {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  background: var(--accent);
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 10px;
+}
+
+button[type="get started"]:hover { background: var(--accent-dark); }

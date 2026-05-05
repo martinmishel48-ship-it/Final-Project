@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>EduVerse - Login</title>
+  <!-- orders styles sheets more more important  -->
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/fonts.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <!-- remix icon aw3aaaa 7d wyms7 deeee -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet" />
+</head>
+
+<body>
+  <main class="main-container">
+    <section class="hero-section">
+      <div class="status-badge">
+        <span class="dot"></span> WELCOME BACK STUDENT
+      </div>
+      <h1>Continue<span>.</span><br>Learning</h1>
+      <p class="description">
+        Access your personalized academic dashboard, track your progress, and connect with your peers. The future of
+        engineering is waiting for you.
+      </p>
+
+      <div class="social-links">
+        <button id="ChangeTheme"> Change Theme ?</button>
+        <div class="icons">
+          <a href="#"><i class="ri-github-fill"></i></a>
+          <a href="#"><i class="ri-linkedin-box-fill"></i></a>
+          <a href="#"><i class="ri-twitter-x-fill"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="form-section">
+      <div class="content">
+        <form id="loginForm" onsubmit="event.preventDefault(); login();">
+          <h2>Log in</h2>
+
+          <div class="input-box">
+            <input type="text" id="loginUsername" placeholder="Username" required />
+            <i class="ri-user-3-line"></i>
+          </div>
+
+          <div class="input-box">
+            <input type="password" id="loginPassword" placeholder="Password" required />
+            <i class="ri-eye-off-line" onclick="togglePass('loginPassword', this)" style="cursor: pointer;"></i>
+          </div>
+
+          <div class="remember"
+            style="display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 20px; color: var(--text-muted);">
+            <label><input type="checkbox" style="accent-color: var(--primary-color); margin-right: 5px;"> Remember
+              me</label>
+            <a href="#" style="color: var(--primary-color); text-decoration: none;">Forgot Password?</a>
+          </div>
+
+          <button type="submit" class="btnn">Log in</button>
+
+          <p class="footer-text">Don't have an account? <a href="signup.html">Sign Up</a></p>
+
+          <p id="message" style="text-align: center; margin-top: 15px;"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/theme.js"></script>
+  <script src="../js/auth.js"></script>
+</body>
+
+</html>

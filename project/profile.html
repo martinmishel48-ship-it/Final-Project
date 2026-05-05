@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduVerse</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/fonts.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="./style.css">
+    <!-- remix icon aw3aaaa 7d wyms7 deeee -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet" />
+</head>
+
+<body onload="loadProfile()">
+
+    <nav>
+        <a class="logo" href="../Pages/home.html">EduVerse</a>
+
+        <div class="nav-links">
+            <a href="../Pages/home.html" class="active">Home</a>
+            <a href="../Course Page/courses.html">Courses</a>
+            <a href="../Pages/martin.html">Files</a>
+            <a href="../Pages/contactUs.html">Contact US</a>
+
+        </div>
+        <div class="nav-actions" style="display: flex; align-items: center; gap: 15px;">
+            <a href="../project/profile.html" class="user-profile-link">
+                <i class="ri-user-3-line"></i>
+            </a>
+
+            <button id="ChangeTheme" class="theme-btn">
+                <i class="ri-moon-line"></i>
+            </button>
+        </div>
+
+    </nav>
+
+    <!-- PROFILE HEADER -->
+    <section class="glass-card profile-hero">
+        <div class="user-meta">
+            <div class="profile-icon">
+                <i class="fa-solid fa-user"></i>
+            </div>
+            <div>
+                <h1 id="fullName">User Name</h1>
+                <p id="username" style="color:var(--primary-color)">username</p>
+                <p class="small" id="emailView"></p>
+            </div>
+        </div>
+    </section>
+
+    <div class="grid">
+        <!-- EDIT PROFILE -->
+        <div class="glass-card">
+            <h2>Edit Profile</h2>
+            <div class="input-group">
+                <input id="firstName" placeholder="First Name">
+            </div>
+            <div class="input-group">
+                <input id="lastName" placeholder="Last Name">
+            </div>
+            <div class="input-group">
+                <input id="userName" placeholder="Username">
+            </div>
+            <div class="input-group">
+                <input id="email" placeholder="University Email">
+            </div>
+            <div class="input-group">
+                <input id="password" type="password" placeholder="Password">
+            </div>
+            <button class="btn" onclick="saveProfile()">Save Changes</button>
+        </div>
+
+        <!-- INFO -->
+        <div class="glass-card">
+            <h3 class="section-title">Courses</h3>
+            <div class="list-card">Ethical Hacking Advanced</div>
+            <div class="list-card">Network Security Mastery</div>
+            <div class="list-card">Linux for Hackers</div>
+            <div class="list-card">Web Pentesting</div>
+
+            <h3 class="section-title">Achievements</h3>
+            <div class="list-card">Bug Hunter</div>
+            <div class="list-card">Top Learner</div>
+            <div class="list-card">Fast Coder</div>
+            <div class="list-card">Cyber Elite Member</div>
+
+            <h3 class="section-title">Skills</h3>
+            <span class="tag">Cyber Security</span>
+            <span class="tag">Networking</span>
+            <span class="tag">Python</span>
+            <span class="tag">Linux</span>
+        </div>
+    </div>
+
+    <!-- JS Link -->
+    <script src="../js/theme.js"></script>
+    <script src="../js/script.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="./profile.js"></script>
+</body>
+<footer class="mainFooter">
+    <div class="container">
+        <div class="design">
+            <p> Designed by <span>KM</span> © 2026 EduVerse.</p>
+        </div>
+
+        <div class="footerLinks">
+            <a href="../Pages/home.html">Home</a>
+            <a href="../Pages/CoursesKArim.html">Courses</a>
+            <a href="../Pages/martin.html">Files</a>
+            <a href="../Pages/contactUs.html">Contact US</a>
+        </div>
+    </div>
+</footer>
+
+
+</html>

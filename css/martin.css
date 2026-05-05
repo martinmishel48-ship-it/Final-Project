@@ -1,0 +1,355 @@
+/* ========= GLOBAL RESET ========= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* ========= DARK THEME (Default) ========= */
+    --bg-color: #0a0a0a;
+    --card-bg: #0a0a0a;
+    --text-primary: #00ff9d;
+    --text-secondary: #8b949e;
+    --accent-green: #2ecc71;
+    --accent-hover: #00ff9d;
+    --border-color: rgba(255, 255, 255, 0.1);
+    --footer-bg: #080808;
+    --font-family: "Poppins", "Cairo", system-ui, sans-serif;
+    --transition: 0.3s ease;
+}
+
+/* ========= LIGHT THEME OVERRIDES ========= */
+[data-theme="light"] {
+    --bg-color: #f8fafc;
+    --card-bg: #ffffff;
+    --text-primary: #014b33; 
+    --text-secondary: #475569;
+    --accent-green: #059669;
+    --accent-hover: #047857;
+    --border-color: rgba(0, 0, 0, 0.1);
+    --footer-bg: #ffffff;
+    --card-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    line-height: 1.6;
+    min-height: 100vh;
+    transition: background var(--transition), color var(--transition);
+}
+
+/* ========= NAVBAR SECTION ========= */
+.navbar {
+    background-color: var(--card-bg);
+    border-bottom: 1px solid var(--border-color);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.nav-logo {
+    color: var(--text-primary);
+    font-size: 2.4rem;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color var(--transition);
+}
+
+.nav-links a:hover,
+.nav-links .active-link {
+    color: var(--accent-green);
+}
+
+/* ========= STATS SECTION (Box Style) ========= */
+.stats {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    border: 2px solid var(--border-color); /* زيادة السمك شوية عشان تبان زي الصورة */
+    min-width: 160px;
+    flex: 1 1 160px;
+    max-width: 200px;
+    transition: var(--transition);
+}
+
+.stat-item:hover {
+    border-color: var(--text-primary);
+    box-shadow: 0 0 15px var(--border-color);
+}
+
+.stat-number {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--accent-green);
+    display: block;
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* ========= SECTION TITLES ========= */
+.section-title {
+    color: var(--text-primary);
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* ========= FILES GRID & CARDS ========= */
+.files-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 24px;
+    margin-bottom: 50px;
+}
+
+.file-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 25px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+}
+
+
+[data-theme="light"] .file-card {
+    box-shadow: var(--card-shadow);
+}
+
+.file-card::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 4px;
+    background: linear-gradient(90deg, #13da0c, var(--text-primary));
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+}
+
+.file-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--accent-hover);
+}
+
+.file-card:hover::before {
+    transform: scaleX(1);
+}
+
+.file-icon {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    display: inline-block;
+    background-color: rgba(37, 37, 56, 0.5);
+    color: var(--text-primary);
+    padding: 10px 16px;
+    border-radius: 12px;
+}
+
+.file-card h3 {
+    color: var(--text-primary); 
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.file-card p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+/* Meta Data */
+.file-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 15px;
+    border-top: 1px solid var(--border-color);
+}
+
+.file-size, .file-type {
+    color: var(--text-primary);
+    font-size: 0.85rem;
+    background-color: rgba(0, 255, 157, 0.05);
+    padding: 5px 12px;
+    border-radius: 20px;
+    border: 1px solid var(--border-color);
+}
+
+/* ========= DOWNLOAD BUTTON ========= */
+.download-btn {
+    display: block;
+    background-color: var(--accent-green);
+    color: #000; /* Contrast text */
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 10px;
+    margin-top: 15px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+.download-btn:hover {
+    background-color: var(--accent-hover);
+    transform: scale(1.02);
+}
+
+/* ========= FOOTER SECTION (Switchable) ========= */
+.mainFooter {
+    background-color: var(--footer-bg);
+    border-top: 1px solid var(--border-color);
+    padding: 40px 0;
+    margin-top: 80px;
+    transition: background var(--transition);
+}
+
+.footer-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.footer-text {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+/* ========= RESPONSIVE ========= */
+@media (max-width: 768px) {
+    .nav-links { display: none; }
+    .files-grid { grid-template-columns: 1fr; }
+    .stats { gap: 15px; }
+}  /* ========= HEADER SECTION ========= */
+.header {
+    max-width: 1100px;
+    margin: 40px auto 20px;
+    padding: 0 20px;
+}
+
+.header h1 {
+    font-size: 2.3rem;
+    margin-bottom: 10px;
+}
+
+.header p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+/* ========= MAIN CONTAINER ========= */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ========= STATS SECTION ========= */
+.stats {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin: 30px 0 60px;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    flex: 1 1 200px;
+    max-width: 240px;
+    text-align: center;
+}
+
+/* ========= SECTION TITLE ========= */
+.section-title {
+    margin: 20px 0 30px;
+}
+
+/* ========= FILES GRID ========= */
+.files-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+    margin-bottom: 60px;
+}
+
+/* ========= FILE CARD FIX ========= */
+.file-card {
+    display: flex;
+    flex-direction: column;
+    min-height: 260px;
+}
+
+
+.download-btn {
+    margin-top: auto;
+}
+
+
+.category-badge {
+    display: inline-block;
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    margin-bottom: 10px;
+}
+
+
+.file-meta {
+    margin-top: 10px;
+}
+
+
+@media (max-width: 768px) {
+    .header {
+        text-align: center;
+    }
+}

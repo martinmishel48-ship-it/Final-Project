@@ -1,0 +1,269 @@
+/*  de kol 7aga f el global mn varaibles & colors & radius & fonts 
+    w el structure tb2a clean 3shan el team y3rf ykaml 3aleha  */ 
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-family);
+}
+
+body {
+  background-color: var(--bg-color); /* use variable msh color static */
+  color: var(--text-main);
+  min-height: 100vh;
+  overflow-x: hidden; /* prevent horizontal scroll */
+  animation: var(--animation);
+  transition: background 0.3s ease, color 0.3s ease; /* smooth theme switch */
+}
+
+body::before {
+  content: none;
+}
+
+/* ========= VARIABLES ========= */
+:root {
+
+  /* ========= COLORS ========= */
+  --primary-color: #00ff9d; /* color of buttons & icons */
+  --bg-color: #0a0a0a; /* main background (dark default) */
+  --surface-color: rgba(255, 255, 255, 0.03); /* glass / cards */
+  --border-color: rgba(255, 255, 255, 0.1);
+  --footer-bg: #080808; /* background bta3 el footer f el dark */
+
+  /* el 7ata bta3t marly (glow system) */
+  --primary-dim:    rgba(0,255,157,0.08);
+  --primary-glow:   rgba(0,255,157,0.18);
+  --primary-dark:   rgba(0,255,157,0.25);
+
+  /* ========= STATES ========= */
+  --error:   #ff4d4d; /* any errors */
+  --success: #00ff9d; /* success messages */
+
+  /* ========= TEXT ========= */
+  --text-main: #ffffff; /* main text color */
+  --text-muted: #999; /* muted text color */
+
+  /* ========= RADIUS ========= */
+  --radius:    16px;
+  --radius-sm: 10px;
+  --radius-lg: 24px;
+
+  /* ========= MOTION ========= */
+  --transition: 0.3s ease; /* use per property msh all */
+  --animation: transitionIn 0.8s ease-out; /* page load */
+
+  /* ========= TYPOGRAPHY ========= */
+  --font-family: "Poppins", "Cairo", system-ui, sans-serif;
+
+  /* ========= LAYOUT ========= */
+  --max-width: 1200px;
+}
+
+/* ========= LIGHT THEME ========= */
+/* bn8ayar el variables bas mn 8er ma n3ml override lel CSS */
+/* ── LIGHT THEME OVERRIDES (Professional & Serious) ── */
+
+[data-theme="light"] {
+
+  /* ========= COLORS ========= */
+  --bg-color: #f8fafc; 
+  --text-main: #0f172a;
+  --text-muted: #475569; /* Slate 600 */
+
+  /* glass system */
+  --surface-color: rgba(255, 255, 255, 0.8);
+  --border-color: rgba(15, 23, 42, 0.08);
+  --footer-bg: #ffffff; /* background bta3 el footer f el light */
+
+  /* primary (emerald style) */
+  --primary-color: #059669;
+  --primary-glow: rgba(5, 150, 105, 0.15);
+
+  /* shadow system */
+  --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.04),
+                 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+}
+
+/* ========= LAYOUT STRUCTURE (Side-by-Side Fix) ========= */
+/* el 7ata de 3shan t-khaly el sidebar wel content gamb ba3d msh ta7t ba3d */
+.course-layout {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  width: 90%;
+  max-width: var(--max-width);
+  margin: 40px auto;
+  align-items: flex-start;
+}
+
+.main-content { flex: 2; } /* el core content bta3 el course */
+.sidebar { flex: 1; position: sticky; top: 100px; } /* el curriculum elly 3la el gamb */
+
+
+/* ========= COMPONENT ADJUSTMENTS (LIGHT MODE) ========= */
+/* bn3dl el components 3shan yb2a clean w professional */
+
+/* glass cards */
+[data-theme="light"] .glass {
+  background: var(--surface-color);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--card-shadow) !important;
+  backdrop-filter: blur(10px);
+}
+
+/* primary buttons */
+[data-theme="light"] .btn-primary {
+  background: var(--primary-color);
+  color: #ffffff; /* contrast a7san */
+  box-shadow: 0 4px 12px rgba(5, 150, 105, 0.2);
+}
+
+/* ghost buttons */
+[data-theme="light"] .btn-ghost {
+  color: var(--text-main);
+  border-color: var(--border-color);
+}
+
+/* ========= NAVBAR & NAVIGATION ========= */
+/* lazm el nav y-kon flex w y-match el variables */
+nav {
+  position: sticky; top: 0; z-index: 1000;
+  background: var(--bg-color); /* use variable 3shan y-switch themes */
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border-color);
+  padding: 0 2rem; height: 75px;
+  display: flex; align-items: center; justify-content: space-between;
+  transition: var(--transition);
+}
+
+.logo {
+  font-family: 'Cairo', sans-serif;
+  font-weight: 700; font-size: 1.5rem;
+  color: var(--primary-color);
+  cursor: pointer;
+  text-shadow: 0 0 20px var(--primary-glow);
+  letter-spacing: .02em;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex; gap: 24px; align-items: center;
+}
+
+.nav-links a {
+  font-size: .875rem; font-weight: 500;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: var(--transition);
+  position: relative;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute; bottom: -4px; left: 0;
+  width: 0; height: 2px;
+  background: var(--primary-color);
+  box-shadow: 0 0 8px var(--primary-color);
+  transition: var(--transition);
+}
+
+.nav-links a:hover,
+.nav-links a.active { color: var(--primary-color); }
+
+.nav-links a:hover::after,
+.nav-links a.active::after { width: 100%; }
+
+/* ========= THEME TOGGLE (Big Icon) ========= */
+.theme-btn {
+    background: var(--surface-color);
+    border: 1px solid var(--border-color);
+    width: 45px; height: 45px;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: var(--transition);
+}
+
+.theme-btn i {
+    font-size: 1.5rem !important; /* kbar el size 3shan t-ban */
+    color: var(--primary-color) !important;
+    pointer-events: none;
+}
+
+.theme-btn:hover {
+    background: var(--primary-color);
+    box-shadow: 0 0 15px var(--primary-glow);
+}
+
+.theme-btn:hover i { color: #000 !important; }
+
+/* ========= 4. FOOTER SECTION ========= */
+/* el footer lazm y-switch lonoh m3 el mode */
+.mainFooter {
+  width: 100%;
+  padding: 40px 0;
+  background: var(--footer-bg); 
+  border-top: 1px solid var(--border-color);
+  margin-top: 80px;
+  flex-shrink: 0;
+  transition: var(--transition);
+}
+
+.mainFooter .container {
+  width: 90%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; 
+  gap: 20px;
+}
+
+.mainFooter p {
+  margin: 0; 
+  font-size: 14px;
+  color: var(--text-main); /* lon el text y-switch 3shan y-ban */
+}
+
+.design span {
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+.footerLinks { display: flex; gap: 24px; }
+.footerLinks a {
+  color: var(--text-muted);
+  font-size: 14px;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.footerLinks a:hover { color: var(--primary-color); }
+
+/* ========= ANIMATIONS ========= */
+@keyframes transitionIn {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* el 7ata bta3t marly pulse */
+@keyframes pulse {
+  0%,100% { 
+    opacity:1; 
+    transform:scale(1);   
+    box-shadow: 0 0 0 0 rgba(0,255,157,0.4); 
+  }
+  50% { 
+    opacity:.7; 
+    transform:scale(.85); 
+    box-shadow: 0 0 0 6px rgba(0,255,157,0); 
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .course-layout { flex-direction: column; }
+  .mainFooter .container { flex-direction: column; text-align: center; }
+}

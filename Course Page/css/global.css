@@ -1,0 +1,307 @@
+/*  de kol 7aga f el global mn varaibles & colors & radius & fonts 
+    w el structure tb2a clean 3shan el team y3rf ykaml 3aleha  */ 
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-family);
+}
+
+body {
+  background-color: var(--bg-color); /* use variable msh color static */
+  color: var(--text-main);
+  min-height: 100vh;
+  overflow-x: hidden; /* prevent horizontal scroll */
+  animation: var(--animation);
+  transition: background 0.3s ease, color 0.3s ease; /* smooth theme switch */
+}
+body::before {
+contetn: none;
+}
+
+
+/* ========= VARIABLES ========= */
+:root {
+
+  /* ========= COLORS ========= */
+  --primary-color: #00ff9d; /* color of buttons & icons */
+  --bg-color: #0a0a0a; /* main background (dark default) */
+  --surface-color: rgba(255, 255, 255, 0.03); /* glass / cards */
+  --border-color: rgba(255, 255, 255, 0.1);
+
+  /* el 7ata bta3t marly (glow system) */
+  --primary-dim:   rgba(0,255,157,0.08);
+  --primary-glow:  rgba(0,255,157,0.18);
+  --primary-dark:  rgba(0,255,157,0.25);
+
+  /* ========= STATES ========= */
+  --error:   #ff4d4d; /* any errors */
+  --success: #00ff9d; /* success messages */
+
+  /* ========= TEXT ========= */
+  --text-main: #ffffff; /* main text color */
+  --text-muted: #999; /* muted text color */
+
+  /* ========= RADIUS ========= */
+  --radius:    16px;
+  --radius-sm: 10px;
+  --radius-lg: 24px;
+
+  /* ========= MOTION ========= */
+  --transition: 0.3s ease; /* use per property msh all */
+  --animation: transitionIn 0.8s ease-out; /* page load */
+
+  /* ========= TYPOGRAPHY ========= */
+  --font-family: "Poppins", "Cairo", system-ui, sans-serif;
+
+}
+/* ========= LIGHT THEME ========= */
+/* bn8ayar el variables bas mn 8er ma n3ml override lel CSS */
+/* ── LIGHT THEME OVERRIDES (Professional & Serious) ── */
+
+[data-theme="light"] {
+
+  /* ========= COLORS ========= */
+ 
+  --bg-color: #f8fafc; 
+  --text-main: #0f172a;
+  --text-muted: #475569; /* Slate 600 */
+
+  /* glass system */
+  --surface-color: rgba(255, 255, 255, 0.8);
+  --border-color: rgba(15, 23, 42, 0.08);
+
+  /* primary (emerald style) */
+  --primary-color: #059669;
+  --primary-glow: rgba(5, 150, 105, 0.15);
+
+  /* shadow system */
+  --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.04),
+                 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+
+}
+
+
+/* ========= COMPONENT ADJUSTMENTS (LIGHT MODE) ========= */
+/* bn3dl el components 3shan yb2a clean w professional */
+
+/* glass cards */
+[data-theme="light"] .glass {
+  background: var(--surface-color);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--card-shadow) !important;
+  backdrop-filter: blur(10px);
+}
+
+
+/* primary buttons */
+[data-theme="light"] .btn-primary {
+  background: var(--primary-color);
+  color: #ffffff; /* contrast a7san */
+  box-shadow: 0 4px 12px rgba(5, 150, 105, 0.2);
+}
+
+
+/* ghost buttons */
+[data-theme="light"] .btn-ghost {
+  color: var(--text-main);
+  border-color: var(--border-color);
+}
+
+
+/* ========= PAGE ANIMATION ========= */
+@keyframes transitionIn {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+
+/* ========= EXTRA ANIMATIONS ========= */
+
+/* el 7ata bta3t marly */
+@keyframes pulse {
+  0%,100% { 
+    opacity:1; 
+    transform:scale(1);   
+    box-shadow: 0 0 0 0 rgba(0,255,157,0.4); 
+  }
+  50% { 
+    opacity:.7; 
+    transform:scale(.85); 
+    box-shadow: 0 0 0 6px rgba(0,255,157,0); 
+  }
+}
+
+@keyframes floatGrid {
+  0%,100% { transform: translateY(0); }
+  50%     { transform: translateY(-8px); }
+}
+
+/* ── NAVBAR & THEME TOGGLE (hn-zod el styling bta3 el nav hna) ── */
+
+nav {
+    display: var(--nav-display); /* 3shan y-switch m3 el variables bta3tk */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: var(--glass-bg);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid var(--glass-border);
+    padding: 0 5%;
+    height: 75px;
+    align-items: center;
+    justify-content: space-between;
+    transition: var(--transition);
+}
+nav {
+  position: sticky; top: 0; z-index: 1000;
+  background: rgba(10,10,10,0.25);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--glass-border);
+  padding: 0 2rem; height: 64px;
+  display: flex; align-items: center; justify-content: space-between;
+  transition: var(--transition);
+}
+ 
+.logo {
+  font-family: 'Cairo', sans-serif;
+  font-weight: 800; font-size: 1.5rem;
+  color: var(--primary-color);
+  cursor: pointer;
+  text-shadow: 0 0 20px rgba(0,255,157,0.4);
+  letter-spacing: .02em;
+  text-decoration: none;
+}
+ 
+.nav-links {
+  display: flex; gap: 24px; align-items: center;
+}
+ 
+.nav-links a {
+  font-size: .875rem; font-weight: 500;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: var(--transition);
+  position: relative;
+}
+ 
+.nav-links a::after {
+  content: '';
+  position: absolute; bottom: -4px; left: 0;
+  width: 0; height: 2px;
+  background: var(--primary-color);
+  box-shadow: 0 0 8px var(--primary-color);
+  transition: var(--transition);
+}
+ 
+.nav-links a:hover,
+.nav-links a.active { color: var(--primary-color); }
+ 
+.nav-links a:hover::after,
+.nav-links a.active::after { width: 100%; }
+ 
+.nav-actions { display: flex; align-items: center; gap: 10px; }
+
+/* ── THEME TOGGLE BUTTON (3shan el icon t-ban w t-kon kbira) ── */
+
+.theme-btn {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    width: 45px;
+    height: 45px;
+    border-radius: 12px; /* y-match el style bta3 el cards */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+/* el icon elly gowa el button (lazm n-kbarha) */
+.theme-btn i {
+    font-size: 1.5rem !important; /* kbar el size 3shan t-ban */
+    color: var(--primary-color) !important; /* lonha y-kon wad7 */
+    display: block !important;
+    pointer-events: none; /* 3shan lma t-dos msh el icon elly t-stlem el click */
+}
+
+.theme-btn:hover {
+    background: var(--primary-color);
+    box-shadow: 0 0 15px var(--primary-glow);
+}
+
+.theme-btn:hover i {
+    color: #000 !important; /* t-leb eswed lma n-hover */
+}
+
+/* lma el theme y-switch l light, n-zbt el icon lonha */
+[data-theme="light"] .theme-btn {
+    background: #ffffff;
+    border-color: var(--primary-color);
+}
+
+.glass {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 2rem; 
+}
+
+input, textarea, select {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 12px !important;
+    padding: 12px 16px !important;
+    color: var(--text-color) !important;
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    border-color: var(--primary-color) !important;
+    box-shadow: 0 0 10px rgba(0, 255, 157, 0.2);
+}
+
+
+.hero h2 {
+    font-size: 3.5rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    opacity: 0.8;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+<nav>
+        <a class="logo" href="../Pages/home.html">EduVerse</a>
+
+        <div class="nav-links">
+            <a href="../Pages/home.html" class="active">Home</a>
+            <a href="../Pages/CoursesKArim.html">Courses</a>
+            <a href="../Pages/profile.html">Files</a>
+            <a href="../Pages/contactUs.html">Contact US</a>
+
+
+
+
+        </div>
+        <div class="nav-actions" style="display: flex; align-items: center; gap: 15px;">
+            <a href="profile.html" class="user-profile-link">
+                <i class="ri-user-3-line"></i>
+            </a>
+
+            <button id="ChangeTheme" class="theme-btn">
+                <i class="ri-moon-line"></i>
+            </button>
+        </div>
+
+    </nav>
